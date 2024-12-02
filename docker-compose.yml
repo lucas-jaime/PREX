@@ -11,7 +11,7 @@ services:
 
   agent:
     build:
-      context: ./agent
+      context: ./AGENT
     environment:
       - API_URL=http://api:5000/collect
     depends_on:
