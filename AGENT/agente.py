@@ -33,11 +33,11 @@ API_URL = os.getenv("API_URL", "http://localhost:5000/collect")
 
 def gather_data():
     data = {
-        "os_name": platform.system(),
-        "os_version": platform.version(),
-        "processor": platform.processor(),
-        "processes": [{"pid": p.pid, "name": p.name()} for p in psutil.process_iter(attrs=["pid", "name"])],
-        "users": [u.name for u in psutil.users()]
+        "os_name": platform.system(), # Nombre del sistema operativo
+        "os_version": platform.version(), # Versión del sistema operativo
+        "processor": platform.processor(), # Información sobre el procesador
+        "processes": [{"pid": p.pid, "name": p.name()} for p in psutil.process_iter(attrs=["pid", "name"])], # Listado de procesos corriendo
+        "users": [u.name for u in psutil.users()] # Usuarios con una sesión abierta en el sistema
     }
     return data
 
